@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "author": "dPaola Ordoñez",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb2", "top": 25.8, "left": 713.2, "attrs": {} },
+    { "type": "wokwi-arduino-mega", "id": "mega", "top": 96.6, "left": 6, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd2", "top": -200.8, "left": 479.7, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": -41.8,
+      "left": 825.6,
+      "attrs": { "color": "green", "xray": "", "key": "ArrowRight", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": -41.8,
+      "left": 1276.8,
+      "attrs": { "color": "green", "xray": "", "key": "ArrowDown", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn5",
+      "top": -41.8,
+      "left": 1132.8,
+      "attrs": { "color": "green", "xray": "", "key": "ArrowUp", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn6",
+      "top": -41.8,
+      "left": 988.8,
+      "attrs": { "color": "green", "xray": "", "key": "ArrowLeft", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 61.55,
+      "left": 768,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 61.55,
+      "left": 921.6,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 61.55,
+      "left": 1075.2,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 61.55,
+      "left": 1219.2,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -141.6,
+      "left": 894.6,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd2:VCC", "mega:5V", "red", [ "v230.4", "h-355.2" ] ],
+    [ "lcd2:GND", "mega:GND.2", "black", [ "v240", "h-355.2" ] ],
+    [ "mega:6", "lcd2:CS", "green", [ "v-28.8", "h216.4", "v124.8", "h134.4" ] ],
+    [ "mega:7", "lcd2:D/C", "violet", [ "v-38.4", "h236", "v124.8", "h124.8" ] ],
+    [ "mega:11", "lcd2:MOSI", "gold", [ "v-48", "h297.2", "v124.8", "h124.8" ] ],
+    [ "lcd2:SCK", "mega:13", "blue", [ "v19.2", "h-115.21", "v-67.2", "h-9.6" ] ],
+    [ "lcd2:LED", "mega:5V.2", "orange", [ "v0" ] ],
+    [ "lcd2:MISO", "mega:12", "white", [ "v124.8", "h-201.61", "v-124.8", "h-57.6" ] ],
+    [ "lcd2:RST", "mega:10", "green", [ "v48", "h-96", "v-86.4", "h-288" ] ],
+    [ "mega:GND.5", "bb2:tn.1", "black", [ "v-18.25", "h333.4", "v-192" ] ],
+    [ "mega:3.3V", "bb2:tp.1", "green", [ "v-2.7", "h530.2", "v-240" ] ],
+    [ "btn3:2.l", "r2:2", "green", [ "h0" ] ],
+    [ "btn6:2.l", "r3:2", "green", [ "h0" ] ],
+    [ "bb2:tp.19", "btn6:1.l", "green", [ "v0" ] ],
+    [ "r3:1", "bb2:tn.14", "green", [ "v0", "h-19.2" ] ],
+    [ "btn3:2.r", "bb2:17t.a", "green", [ "h0" ] ],
+    [ "bb2:tn.2", "r2:1", "green", [ "v0" ] ],
+    [ "btn6:2.r", "bb2:34t.a", "green", [ "h0" ] ],
+    [ "r4:1", "bb2:tn.28", "green", [ "v0", "h-9.6" ] ],
+    [ "btn5:2.l", "r4:2", "green", [ "h0" ] ],
+    [ "btn5:2.r", "bb2:49t.a", "green", [ "h0" ] ],
+    [ "r5:1", "bb2:tn.41", "green", [ "v0" ] ],
+    [ "r5:2", "btn4:2.l", "green", [ "v0" ] ],
+    [ "bb2:tp.45", "btn4:1.l", "green", [ "v0" ] ],
+    [ "btn4:2.r", "bb2:63t.a", "green", [ "h0.2", "v86.6" ] ],
+    [ "bb2:tp.32", "btn5:1.l", "green", [ "v0" ] ],
+    [ "bb2:tp.5", "btn3:1.l", "green", [ "v0" ] ],
+    [ "mega:18", "bb2:17t.b", "cyan", [ "v230.4", "h367.1", "v0", "h220.8" ] ],
+    [ "mega:19", "bb2:34t.b", "magenta", [ "v192", "h357.1", "v-19.2", "h355.2" ] ],
+    [ "mega:20", "bb2:49t.b", "purple", [ "v249.6", "h366.8", "v-9.6", "h393.6" ] ],
+    [ "mega:21", "bb2:63t.b", "violet", [ "v278.4", "h318.9", "v38.4", "h537.6" ] ],
+    [ "bb2:tn.15", "bz1:1", "black", [ "v0" ] ],
+    [ "bz1:2", "bb2:22t.a", "yellow", [ "v0" ] ],
+    [ "mega:8", "bb2:22t.b", "yellow", [ "v153.6", "h565.8" ] ]
+  ],
+  "dependencies": {}
+}
