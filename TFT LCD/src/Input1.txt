@@ -1,0 +1,24 @@
+#ifndef INPUT_H
+#define INPUT_H
+
+#include "Config.h"
+#include <Arduino.h>
+
+class Game; // Declaración adelantada
+
+class Input {
+public:
+    Input();
+    void setup(Game* gameInstance); // Pasa una referencia al juego para los ISRs
+
+    // Funciones ISR estáticas (o globales si prefieres)
+    static void handleRight();
+    static void handleLeft();
+    static void handleUp();
+    static void handleDown();
+
+private:
+    static Game* game; // Puntero estático para que los ISRs accedan al juego
+};
+
+#endif // INPUT_H
